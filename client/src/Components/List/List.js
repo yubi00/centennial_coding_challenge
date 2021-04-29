@@ -24,7 +24,7 @@ const List = () => {
       <tbody>
         {data.data &&
           data.data.map((item, i) => (
-            <ListItem key={item.Timestamp} item={item} index={i} />
+            <ListItem key={item.timestamp} item={item} index={i} />
           ))}
       </tbody>
     </Table>

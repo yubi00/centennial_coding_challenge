@@ -4,11 +4,11 @@ const ListItem = ({ item, index }) => {
   return (
     <tr>
       <th scope='row'>{index + 1}</th>
-      <td>{item.Timestamp}</td>
-      <td>{item["Site - Battery Power"]}</td>
-      <td>{item["Site - Grid Power"]}</td>
-      <td>{item["Site - Load Power"]}</td>
-      <td>{item["Site - PV Power"]}</td>
+      <td>{item.timestamp}</td>
+      <td>{item.batteryPower}</td>
+      <td>{item.gridPower}</td>
+      <td>{item.loadPower}</td>
+      <td>{item.pvPower}</td>
     </tr>
   );
 };
