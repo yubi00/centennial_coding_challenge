@@ -1,4 +1,5 @@
 Centennial App
+
 This app processes the data from the csv formatted file and the data is displayed in the screen. This project is built using NodeJS and ReactJS
 
 Local Installation Instructions:
