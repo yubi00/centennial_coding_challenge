@@ -1,5 +1,5 @@
 const { getData } = require("../utils/getData");
-const { getSolarSummary } = require("../utils/getSummary");
+const { getSolarSummary, getEnergyGrid } = require("../utils/getSummary");
 
 const loadData = async (req, res) => {
   try {
@@ -37,18 +37,16 @@ const loadData = async (req, res) => {
 const getSummary = async (req, res) => {
   try {
     const data = await getData("./data/data.csv");
-    const batteryPowerSummary = getSolarSummary(data, "Site - Battery Power");
     const pvSummary = getSolarSummary(data, "Site - PV Power");
     const loadPowerSummary = getSolarSummary(data, "Site - Load Power");
-    const gridPowerSummary = getSolarSummary(data, "Site - Grid Power");
+    const gridEngery = getEnergyGrid(data);
 
     res.status(200).send({
       success: true,
       data: {
-        ...batteryPowerSummary,
         ...pvSummary,
         ...loadPowerSummary,
-        ...gridPowerSummary
+        ...gridEngery
       }
     });
   } catch (err) {
